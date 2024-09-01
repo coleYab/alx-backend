@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+"""
+simple pagination element
+"""
+
 import csv
 import math
 from typing import List, Tuple
@@ -30,7 +35,7 @@ class Server:
         index_rng = index_range(page, page_size)
         data_set = self.dataset()
         page_data = []
-        
+
         if index_rng[0] <= len(data_set) - 1:
             if index_rng[1] > len(data_set) - 1:
                 return data_set[index_rng[0]:]
@@ -47,7 +52,7 @@ def index_range(page: int, page_size: int) -> Tuple[int]:
         page_size (int): the page size
 
     Raises:
-        Exception: index is invalid 
+        Exception: index is invalid
 
     Returns:
         Tuple[int]: _description_

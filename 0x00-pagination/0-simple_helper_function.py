@@ -2,8 +2,8 @@
 """
 A Module to hold the helper function
 """
-
 import typing
+
 
 def index_range(page: int, page_size: int) -> typing.Tuple[int]:
     """function to count the range of the items to be returned
@@ -13,7 +13,7 @@ def index_range(page: int, page_size: int) -> typing.Tuple[int]:
         page_size (int): the page size
 
     Raises:
-        Exception: index is invalid 
+        Exception: index is invalid
 
     Returns:
         typing.Tuple[int]: _description_
