@@ -55,10 +55,10 @@ class Server:
                 data = list(index_ds.items())[start:]
 
         indexed_data = {
-            'index': index,
+            'index': index if len(data) == 0 else data[0][0],
             'data': [i[1] for i in data],
             'page_size': len(data),
-            'next_index': index + page_size
+            'next_index': index + page_size if len(data) else data[-1][0] + 1
         }
 
         return indexed_data
@@ -78,4 +78,3 @@ def index_range(index: int, page_size: int) -> Tuple[int]:
         Tuple[int]: _description_
     """
     return (index, index + page_size)
-

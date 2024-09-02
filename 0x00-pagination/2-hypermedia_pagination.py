@@ -43,7 +43,6 @@ class Server:
 
         return page_data
 
-
     def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
         """generateing some hyper midea infromations for a page
         """
@@ -53,7 +52,8 @@ class Server:
         data = self.get_page(page, page_size)
         hyper_midea = {
             'page_size': len(data), 'page': page, 'data': data,
-            'next_page': page + 1, 'prev_page': page - 1, 'total_pages': total_pages
+            'next_page': page + 1, 'prev_page': page - 1,
+            'total_pages': total_pages
           }
 
         return hyper_midea
