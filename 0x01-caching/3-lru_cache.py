@@ -33,4 +33,6 @@ class LRUCache(BaseCaching):
         """ retriving a cache with the key
         """
         if key in self.cache_data:
+            self.lru_items_list.remove(key)
+            self.lru_items_list.insert(0, key)
             return self.cache_data[key]
