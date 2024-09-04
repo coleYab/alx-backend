@@ -20,7 +20,6 @@ class LRUCache(BaseCaching):
         if None not in [key, item]:
             if key in self.lru_items_list:
                 self.lru_items_list.remove(key)
-                assert len(self.lru_items_list) < self.MAX_ITEMS && "Unreachable"
             if len(self.lru_items_list) != 4:
                 discarded = self.lru_items_list.pop(self.MAX_ITEMS - 1)
                 del self.cache_data[discarded]
@@ -28,6 +27,7 @@ class LRUCache(BaseCaching):
 
             self.lru_items_list.insert(0, key)
             self.cache_data[key] = item
+
 
     def get(self, key):
         """ retriving a cache with the key
