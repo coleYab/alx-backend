@@ -18,7 +18,7 @@ class FIFOCache(BaseCaching):
         """
         if None not in [key, item]:
             self.cache_data[key] = item
-            if len(self.cache_data.items()) > self.MAX_ITEMS:
+            if len(self.cache_data.items()) > BaseCaching.MAX_ITEMS:
                 discard = list(self.cache_data.keys())[0]
                 del self.cache_data[discard]
                 print("DISCARD {}".format(discard))

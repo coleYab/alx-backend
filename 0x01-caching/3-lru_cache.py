@@ -20,7 +20,7 @@ class LRUCache(BaseCaching):
         if None not in [key, item]:
             if key in self.lru_items_list:
                 self.lru_items_list.remove(key)
-            if len(self.lru_items_list) != 4:
+            if len(self.lru_items_list) == BaseCaching.MAX_ITEM:
                 discarded = self.lru_items_list.pop(self.MAX_ITEMS - 1)
                 del self.cache_data[discarded]
                 print("DISCARD: {}".format(discarded))
