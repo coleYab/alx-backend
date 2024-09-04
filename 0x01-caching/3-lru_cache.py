@@ -28,7 +28,6 @@ class LRUCache(BaseCaching):
             self.lru_items_list.insert(0, key)
             self.cache_data[key] = item
 
-
     def get(self, key):
         """ retriving a cache with the key
         """
