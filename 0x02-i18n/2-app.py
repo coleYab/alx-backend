@@ -2,7 +2,7 @@
 """
 simple babel configuration
 """
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
 from flask_babel import Babel
 
@@ -21,7 +21,7 @@ app.config.from_object(Config)
 babel = Babel(app)
 
 
-@babel.loacleselector
+@babel.localeselector
 def get_loacle() -> str:
     """ returns the message to get a loacale language
     """
@@ -33,7 +33,7 @@ def homepage() -> str:
     """
     simple template website
     """
-    return render_template('1-index.html')
+    return render_template('2-index.html')
 
 if __name__ == '__main__':
         app.run(port="5000", host="0.0.0.0", debug=True)
